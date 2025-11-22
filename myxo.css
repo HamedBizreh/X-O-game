@@ -1,0 +1,165 @@
+body{
+  font-family: Arial;
+}
+
+h1{
+  font-size: 100px;
+  text-align: center;
+  background-color: purple;
+  color: white;
+  border-radius: 30px;
+  margin: 60px 500px;
+  padding: 50px 0;
+}
+.loadPopUp{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.enterNames{
+  width: 80%;
+  max-width: 600px;
+  height: 370px;
+  background-color: purple;
+  border-radius: 20px;
+  position: absolute; 
+  inset: 0;
+  margin: auto;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.playerInstruction{
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.playerName{
+  background-color: transparent;
+  padding: 15px 10px 15px 20px;
+  margin-left: 10px;
+  font-size: 15px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.7);
+  border-width: 1px;
+}
+.startBtn{
+  background-color: white;
+  border-style: none;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.startBtn:hover{
+  background-color: rgba(255,255,255,0.7);
+  transform: scale(1.1) translateY(-6px);
+  transition: all 0.2s;
+}
+.startBtn:active{
+  background-color: rgba(255,255,255,0.4);
+  transform: scale(1) translateY(-2px);
+  transition: all 0.2s;
+}
+.warningNote{
+  color: rgb(255, 34, 34);
+  font-size: 14px;
+  font-weight: bold;
+}
+#game{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  gap: 200px;
+}
+.players{
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0 0 150px;
+  background-color: purple;
+  color: white;
+  max-width: 300px;
+  width: 90%;
+  padding-left: 30px;
+  border-radius: 20px;
+}
+.player{
+  font-size: 22px;
+  font-weight: bold;
+}
+#board{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.cell{
+  width: 150px;
+  height: 150px;
+  border-style: solid;
+  border-color: purple;
+  border-width: 5px;
+}
+.one{
+border-top-color: transparent;
+border-left-color: transparent;
+}
+.two{
+  border-top-color: transparent;
+}
+.three{
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.four{
+  border-left-color: transparent;
+}
+.six{
+  border-right-color: transparent;
+}
+.seven{
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.eight{
+  border-bottom-color: transparent;
+}
+.nine{
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.XO{
+  font-size: 110px;
+  text-align: center;
+}
+#winnerPopUp{
+  display:none;
+  position: absolute; 
+  inset: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);  
+  font-size: 100px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.note{
+  color: rgb(200, 200, 200);
+  font-size: 30px;
+  font-weight: bold;
+}

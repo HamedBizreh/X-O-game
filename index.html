@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X/O Game</title>
+    <link rel="stylesheet" href="myxo.css" />
+  </head>
+  <body>
+    <h1>X / O GAME !</h1>
+    <div class="loadPopUp">
+      <div class="enterNames">
+        <p class="playerInstruction">
+          Player's ❌ Name: 
+          <input id="inputOne" class="playerName" placeholder="Enter Name..." type="text" />
+        </p>
+        <p class="playerInstruction">
+          Player's ⭕ Name:
+          <input id="inputTwo" class="playerName" placeholder="Enter Name..." type="text" />
+        </p>
+        <button class="startBtn">Start</button>
+      </div>
+    </div>
+    <section id="game">
+      <section class="players">
+        <p id="playerOne" class="player"></p>
+        <p id="playerTwo" class="player"></p>
+      </section>
+      <section id="board">
+        <div class="cell one"></div>
+        <div class="cell two"></div>
+        <div class="cell three"></div>
+        <div class="cell four"></div>
+        <div class="cell five"></div>
+        <div class="cell six"></div>
+        <div class="cell seven"></div>
+        <div class="cell eight"></div>
+        <div class="cell nine"></div>
+      </section>
+    </section>
+    <div id="winnerPopUp">
+    </div>
+    
+    <script src="myxo.js"></script>
+  </body>
+</html>
