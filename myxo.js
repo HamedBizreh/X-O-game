@@ -5,26 +5,28 @@ let gameBoardP1Name = document.getElementById('playerOne');
 let gameBoardP2Name = document.getElementById('playerTwo');
 let playerOneName = '';
 let playerTwoName = '';
+let warningApeared = false;
 startBtn.addEventListener('click', (e)=>{
 playerOneName = playerOneInput.value.trim();
 playerTwoName = playerTwoInput.value.trim();
 const popUpDiv = document.querySelector('.loadPopUp');
 const enterNamesDiv = document.querySelector('.enterNames');
 if(playerOneName == '' || playerTwoName == ''){
-	let warning = document.createElement('p');
-	warning.textContent = '*Please Enter Both Names*';
-	warning.classList.add('warningNote');
-	enterNamesDiv.appendChild(warning);
+	  if(!warningApeared){
+	  let warning = document.createElement('p');
+	  warning.textContent = '*Please Enter Both Names*';
+	  warning.classList.add('warningNote');
+	  enterNamesDiv.appendChild(warning);
+		warningApeared = true;
+	}
 	return;
 };
 gameBoardP1Name.textContent = `Player ❌: ${playerOneName}`;
 gameBoardP2Name.textContent = `Player ⭕: ${playerTwoName}`;
-gameBoardP1Name.textContent += ` (${currentPlayer}'s Turn)`;
+gameBoardP1Name.textContent += ` (Now)`;
 popUpDiv.style.display = 'none';
 enterNamesDiv.style.display = 'none';
 });
-
-
 const cells = document.querySelectorAll('.cell');
 let currentPlayer = 'x';
 let gameOver = false;
@@ -49,8 +51,6 @@ for (let cell of cells){
 		changeTurn();
 	});
 };
-
-
 function winCondition(cells){
 	winningCombonations = [
 		[0,1,2], [3,4,5], [6,7,8],
@@ -69,11 +69,11 @@ function winCondition(cells){
 }
 function changeTurn(){
 	if(currentPlayer === 'x'){
-		gameBoardP1Name.textContent = `Player ❌: ${playerOneName} (x's Turn)`;
+		gameBoardP1Name.textContent = `Player ❌: ${playerOneName} (Now)`;
     gameBoardP2Name.textContent = `Player ⭕: ${playerTwoName}`;
 	}
 	else{
-		gameBoardP2Name.textContent = `Player ⭕: ${playerTwoName} (o's Turn)`;
+		gameBoardP2Name.textContent = `Player ⭕: ${playerTwoName} (Now)`;
     gameBoardP1Name.textContent = `Player ❌: ${playerOneName}`;
 	}
 	return;
